@@ -8,27 +8,15 @@ import Colors from '../../config/Colors';
 function BottomTab({ props }) {
 
     return (
-        <View style={{ borderColor: Colors.grey, borderWidth: RFPercentage(0.1), borderTopLeftRadius: RFPercentage(3), borderTopRightRadius: RFPercentage(3), flexDirection: 'row', alignItems: 'center', position: 'absolute', justifyContent: 'center', bottom: 0, width: "100%", height: RFPercentage(7), backgroundColor: Colors.white }}>
-            <View style={{ width: "80%", flexDirection: "row", alignItems: 'center', justifyContent: 'space-between', }} >
+        <View style={{ borderTopLeftRadius: RFPercentage(4), borderTopRightRadius: RFPercentage(4), flexDirection: 'row', alignItems: 'center', position: 'absolute', justifyContent: 'center', bottom: 0, width: "100%", height: RFPercentage(9), backgroundColor: Colors.vanilla }}>
+            <View style={{ width: "60%", flexDirection: "row", alignItems: 'center', justifyContent: 'space-between', }} >
 
-                <TouchableOpacity onPress={() => props.navigation.navigate("LessonsScreen")} activeOpacity={0.8} style={{ justifyContent: 'center', alignItems: 'center' }} >
-                    <Image style={{ width: RFPercentage(3.4), height: RFPercentage(3.4) }} source={require('../../../assets/images/cal.png')} />
+                <TouchableOpacity activeOpacity={0.8} style={{ justifyContent: 'center', alignItems: 'center' }} >
+                    <Image style={{ width: RFPercentage(3.2), height: RFPercentage(4.4) }} source={require('../../../assets/images/loc.png')} />
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => props.navigation.navigate("ChatScreen")} activeOpacity={0.8} style={{ justifyContent: 'center', alignItems: 'center' }} >
-                    <Image style={{ width: RFPercentage(3.4), height: RFPercentage(3.4) }} source={require('../../../assets/images/mes.png')} />
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={() => props.navigation.navigate("HomeScreen")} activeOpacity={0.8} style={{ justifyContent: 'center', alignItems: 'center' }} >
-                    <Image style={{ width: RFPercentage(3.4), height: RFPercentage(3.4) }} source={require('../../../assets/images/home.png')} />
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={() => props.navigation.navigate("TranslationScreen")} activeOpacity={0.8} style={{ justifyContent: 'center', alignItems: 'center' }} >
-                    <Image style={{ width: RFPercentage(3.4), height: RFPercentage(3.4) }} source={require('../../../assets/images/pet.png')} />
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={() => props.navigation.navigate("ProfileScreen")} activeOpacity={0.8} style={{ justifyContent: 'center', alignItems: 'center' }} >
-                    <Image style={{ width: RFPercentage(3.4), height: RFPercentage(3.4) }} source={require('../../../assets/images/acc.png')} />
+                <TouchableOpacity activeOpacity={0.8} style={{ justifyContent: 'center', alignItems: 'center' }} >
+                    <Image style={{ width: RFPercentage(3.5), height: RFPercentage(4.1) }} source={require('../../../assets/images/shop.png')} />
                 </TouchableOpacity>
             </View>
         </View>
