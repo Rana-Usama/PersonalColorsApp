@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Image, ImageBackground, StyleSheet } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize';
 
 //components
@@ -11,7 +11,7 @@ import LoadingModal from './../components/common/LoadingModal';
 //config
 import Colors from '../config/Colors';
 
-function MapScreen(props) {
+function RewardScreen(props) {
 
     const [indicator, showIndicator] = useState(false);
 
@@ -95,16 +95,34 @@ function MapScreen(props) {
                 </TouchableOpacity>
             </View>
 
-            {/* Alert! */}
-            <View style={styles.alertContainer} >
-                <Text style={{ color: Colors.black, fontSize: RFPercentage(2.3), fontFamily: 'ZCOOLKuaiLe_400Regular' }} >
-                    Not Deleted
+            {/* Reward! */}
+            <View style={styles.rewardContainer} >
+                <ImageBackground style={styles.redImage} source={require('../../assets/images/red.png')} >
+                    <Image source={require('../../assets/images/fries.png')} style={{ width: RFPercentage(5), height: RFPercentage(5) }} />
+                </ImageBackground>
+                <Text style={styles.congratsText} >
+                    CONGRATS
                 </Text>
-                <View style={{ width: '90%', marginTop: RFPercentage(1.9), justifyContent: 'center', alignItems: 'center' }} >
-                    <Text style={{ textAlign: 'center', color: Colors.black, fontSize: RFPercentage(2), fontFamily: 'ZCOOLKuaiLe_400Regular' }} >
-                        You cannot start outside the cordinates!
+                <View style={styles.subContainer} >
+                    <Text style={{ fontSize: RFPercentage(3), fontFamily: 'ZCOOLKuaiLe_400Regular', color: Colors.black }} >
+                        +
+                    </Text>
+                    <Image style={{ marginLeft: RFPercentage(1.6), width: RFPercentage(3), height: RFPercentage(3) }} source={require('../../assets/images/icon.png')} />
+                    <Text style={{ marginLeft: RFPercentage(1.6), fontSize: RFPercentage(3), fontFamily: 'ZCOOLKuaiLe_400Regular', color: Colors.black }} >
+                        70
                     </Text>
                 </View>
+                <Text style={{ marginTop: RFPercentage(3), color: Colors.black, fontSize: RFPercentage(1.9), fontFamily: 'ZCOOLKuaiLe_400Regular' }} >
+                    You won a Lv 3 sovenior!
+                </Text>
+                <TouchableOpacity activeOpacity={0.8} style={styles.claimButtonContainer} >
+                    <Text style={{ fontSize: RFPercentage(2.2), fontFamily: 'ZCOOLKuaiLe_400Regular', color: Colors.black }} >
+                        Claim
+                    </Text>
+                </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.8} >
+                    <Image style={{ width: RFPercentage(10), height: RFPercentage(10), marginTop: RFPercentage(2) }} source={require('../../assets/images/camera.png')} />
+                </TouchableOpacity>
             </View>
 
             <View style={styles.bottomWhiteContainer} >
@@ -115,7 +133,7 @@ function MapScreen(props) {
                     </Text>
                 </View>
                 {/* Start Button */}
-                <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("EnterRoomScreen")} style={styles.startButtonContainer} >
+                <TouchableOpacity activeOpacity={0.8} style={styles.startButtonContainer} >
                     <Text style={{ color: Colors.black, fontFamily: 'ZCOOLKuaiLe_400Regular', fontSize: RFPercentage(2.4) }} >
                         Start
                     </Text>
@@ -272,7 +290,45 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.lightVanilla,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    rewardContainer: {
+        marginTop: RFPercentage(3),
+        width: RFPercentage(40),
+        height: RFPercentage(48),
+        backgroundColor: '#D0FAD2',
+        borderRadius: RFPercentage(3),
+        justifyContent: 'flex-start',
+        alignItems: 'center'
+    },
+    redImage: {
+        marginTop: RFPercentage(1.2),
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: RFPercentage(12),
+        height: RFPercentage(12)
+    },
+    congratsText: {
+        marginTop: RFPercentage(2),
+        color: Colors.black,
+        fontSize: RFPercentage(2),
+        fontFamily: 'ZCOOLKuaiLe_400Regular'
+    },
+    subContainer: {
+        marginTop: RFPercentage(3),
+        alignSelf: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row'
+    },
+    claimButtonContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: RFPercentage(2),
+        width: RFPercentage(11),
+        height: RFPercentage(4.4),
+        backgroundColor: Colors.white,
+        borderRadius: RFPercentage(2)
     }
 })
 
-export default MapScreen;
+export default RewardScreen;

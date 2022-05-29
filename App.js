@@ -7,6 +7,8 @@ import { RFPercentage } from 'react-native-responsive-fontsize';
 
 //screens
 import MapScreen from './app/screens/MapScreen';
+import RewardScreen from './app/screens/RewardScreen';
+import EnterRoomScreen from './app/screens/EnterRoomScreen';
 
 //config
 import Colors from './app/config/Colors';
@@ -27,6 +29,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="MapScreen">
         <Stack.Screen name="MapScreen" component={MapScreen} />
+        <Stack.Screen name="RewardScreen" component={RewardScreen} />
+        <Stack.Screen name="EnterRoomScreen" component={EnterRoomScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -34,5 +38,7 @@ export default function App() {
 
 
 // Happy Coding :)
+// Regards!
+// Native_Devv
 
 
